@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eternitrance]]></title><description><![CDATA[Just a foolish coder's space.]]></description><link>https://blog.tocz9ea.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 15 Sep 2020 09:32:25 GMT</lastBuildDate><item><title><![CDATA[最近在学啥？]]></title><description><![CDATA[CS50 由于自己确实没有经过正经的软工或者计科教学，在一些基础认知上，可能还需要正确地理解与强化，加上自己从初中以来的各种经验，我选择了 Harvard 的 CS5…]]></description><link>https://blog.tocz9ea.com/what-have-i-been-learning/</link><guid isPermaLink="false">https://blog.tocz9ea.com/what-have-i-been-learning/</guid><pubDate>Sun, 13 Sep 2020 00:50:48 GMT</pubDate><content:encoded>&lt;h2&gt;CS50&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eternitrance]]></title><description><![CDATA[Just a foolish coder's space.]]></description><link>https://blog.tocz9ea.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 15 Sep 2020 12:12:54 GMT</lastBuildDate><item><title><![CDATA[最近在学啥？]]></title><description><![CDATA[CS50 由于自己确实没有经过正经的软工或者计科教学，在一些基础认知上，可能还需要正确地理解与强化，加上自己从初中以来的各种经验，我选择了 Harvard 的 CS5…]]></description><link>https://blog.tocz9ea.com/what-have-i-been-learning/</link><guid isPermaLink="false">https://blog.tocz9ea.com/what-have-i-been-learning/</guid><pubDate>Sun, 13 Sep 2020 00:50:48 GMT</pubDate><content:encoded>&lt;h2&gt;CS50&lt;/h2&gt;
 &lt;p&gt;由于自己确实没有经过正经的软工或者计科教学，在一些基础认知上，可能还需要正确地理解与强化，加上自己从初中以来的各种经验，我选择了 Harvard 的 CS50 作为入门课程来学习。在学习之中也在各种查缺补漏，尤其是数据结构和算法上，可能还是需要通过对过程的细化来深刻理解不同点和优缺点。起码之前看各种图解没有厘清的各种排序，在课上算是以一个循序渐进的方式明白了，这应该算是进步吧？&lt;/p&gt;
 &lt;p&gt;目前正在以两周一章的进度学习着，希望能不拖到年尾，并且做完 Final Project，拿一个 Certification 吧。&lt;/p&gt;
 &lt;ul&gt;
@@ -36,7 +36,6 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;https://cs61a.org/&quot;&gt;CS 61A: Structure and Interpretation of Computer Programs&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Data Structures and Algorithms&lt;/li&gt;
-&lt;li&gt;Database Systems&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/pingcap/awesome-database-learning&quot;&gt;Awesome Database Learning&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Computer Networking&lt;/li&gt;
 &lt;li&gt;Operating Systems&lt;/li&gt;
