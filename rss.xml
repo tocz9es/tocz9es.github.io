@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eternitrance]]></title><description><![CDATA[Just a foolish coder's space.]]></description><link>https://blog.tocz9ea.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 08 Nov 2020 16:03:39 GMT</lastBuildDate><item><title><![CDATA[Hackergame 2020 Writeup]]></title><description><![CDATA[手痒，花半天玩了下，剩下的就都卡住了。 做了签到、2048、一闪而过的 Flag、从零开始的记账工具人、233 同学的 Docker bBfMaD 签到 9wqCiR 打开题目，能看见这样的一个页面，包括一个可拖拽 range 和一个提取 button…]]></description><link>https://blog.tocz9ea.com/hackergame-2020-writeup/</link><guid isPermaLink="false">https://blog.tocz9ea.com/hackergame-2020-writeup/</guid><pubDate>Sun, 08 Nov 2020 17:54:44 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[eternitrance]]></title><description><![CDATA[Just a foolish coder's space.]]></description><link>https://blog.tocz9ea.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 03 Dec 2020 15:28:15 GMT</lastBuildDate><item><title><![CDATA[Hackergame 2020 Writeup]]></title><description><![CDATA[手痒，花半天玩了下，剩下的就都卡住了。 做了签到、2048、一闪而过的 Flag、从零开始的记账工具人、233 同学的 Docker bBfMaD 签到 9wqCiR 打开题目，能看见这样的一个页面，包括一个可拖拽 range 和一个提取 button…]]></description><link>https://blog.tocz9ea.com/hackergame-2020-writeup/</link><guid isPermaLink="false">https://blog.tocz9ea.com/hackergame-2020-writeup/</guid><pubDate>Sun, 08 Nov 2020 17:54:44 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;手痒，花半天玩了下，剩下的就都卡住了。&lt;/p&gt;
 &lt;p&gt;做了签到、2048、一闪而过的 Flag、从零开始的记账工具人、233 同学的 Docker&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -113,11 +113,11 @@
 &lt;li&gt;✅️ Part 1 - Introduction to React (08/24)&lt;/li&gt;
 &lt;li&gt;✅️ Part 2 - Communicating with server (09/16)&lt;/li&gt;
 &lt;li&gt;✅️ Part 3 - Programming a server with NodeJS and Express (09/18)&lt;/li&gt;
-&lt;li&gt;👉️ Part 4 - Testing Express servers, user administration&lt;/li&gt;
-&lt;li&gt;Part 5 - Testing React apps&lt;/li&gt;
-&lt;li&gt;Part 6 - State management with Redux&lt;/li&gt;
-&lt;li&gt;Part 7 - React router, custom hooks, styling app with CSS and webpack&lt;/li&gt;
-&lt;li&gt;Part 8 - GraphQL&lt;/li&gt;
+&lt;li&gt;✅️ Part 4 - Testing Express servers, user administration (10/17)&lt;/li&gt;
+&lt;li&gt;✅️ Part 5 - Testing React apps (10/25)&lt;/li&gt;
+&lt;li&gt;✅️ Part 6 - State management with Redux (11/16)&lt;/li&gt;
+&lt;li&gt;✅️ Part 7 - React router, custom hooks, styling app with CSS and webpack (11/26)&lt;/li&gt;
+&lt;li&gt;👉️ Part 8 - GraphQL&lt;/li&gt;
 &lt;li&gt;Part 9 - Typescript&lt;/li&gt;
 &lt;li&gt;Part 10 - React Native&lt;/li&gt;
 &lt;/ul&gt;
